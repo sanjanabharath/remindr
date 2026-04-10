@@ -2,14 +2,15 @@ import json
 import requests
 from typing import TypedDict, List, Optional
 from difflib import SequenceMatcher
-
+from dotenv import load_dotenv
 from langgraph.graph import StateGraph, END
-
+import os
 
 # ---------------------------
 # 🔐 CONFIG
 # ---------------------------
-OPENROUTER_API_KEY = "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"
+load_dotenv()
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 
 # ---------------------------
