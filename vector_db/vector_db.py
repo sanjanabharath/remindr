@@ -49,3 +49,7 @@ def fetch_last_memories(collection, k=10):
     )
     
     return sorted_docs[:k]
+
+def fetch_all_memories(collection):
+    res = collection.get(include=["documents", "metadatas"])
+    return list(zip(res["documents"], res["metadatas"]))

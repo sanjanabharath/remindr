@@ -9,7 +9,7 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 def brain(new_memeory, relevant_memory):
     messages = [
-        {"role": "system", "content": "You are an AI brain that decides whether a new memory needs an addition or updation or deletion to the existing memory. Decide based on the relevance and importance of the new memory compared to the existing memory. Answer with 'add', 'update', or 'delete' or 'none'."},
+        {"role": "system", "content": "You are an AI brain that decides whether a new memory needs an addition or updation or deletion to the existing memory. Decide based on the relevance and importance of the new memory compared to the existing memory. Answer with 'add', 'update', or 'delete' or 'none'. Here are the details of the new memory and the relevant memory: {new_memory} and {relevant_memory}".format(new_memory=new_memeory, relevant_memory=relevant_memory)},
     ]
 
     try:
