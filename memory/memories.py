@@ -38,7 +38,7 @@ def update_phase(new_memory, collection):
     # Get relevant memories based on the new memory
     relevant = relevant_memories(collection, new_memory, s=5)
 
-    for mem in relevant_memories:
+    for mem in relevant["documents"]:
         decision = brain(new_memory, mem)
 
         if decision == "add":
